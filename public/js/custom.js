@@ -21,7 +21,7 @@ $( document ).ready(function() {
         mounted: async function() {
             let amount = 0
             try {
-                let balance = await fetch('http://localhost:8000/balance', {
+                let balance = await fetch(siteUrl+'/balance', {
                     method: 'GET'
                 })
                 let balanceData = await balance.json()
@@ -39,7 +39,7 @@ $( document ).ready(function() {
         methods: {
             balance: async function() {
                 try {
-                    let balance = await fetch('http://localhost:8000/balance', {
+                    let balance = await fetch(siteUrl+'/balance', {
                         method: 'GET'
                     })
                     let balanceData = await balance.json()
@@ -57,7 +57,7 @@ $( document ).ready(function() {
             payment: async function() {
                 let amount = this.paymentAmount
                 try {
-                    let payment = await fetch('http://localhost:8000/paycreate', {
+                    let payment = await fetch(siteUrl+'/paycreate', {
                         method: 'POST',
                         body: JSON.stringify({
                             amount: amount

@@ -103,7 +103,7 @@ class ApiController extends Controller
                     ]
                 ]],
                 "redirect_urls" => [
-                    "return_url" => "http://localhost:8000/aproved/".$hash,
+                    "return_url" => url('aproved').'/'.$hash,
                     "cancel_url" => "https://example.com"
                 ]
 
